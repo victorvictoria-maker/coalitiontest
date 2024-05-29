@@ -5,7 +5,12 @@ export default {
     extend: {
       colors: {
         "default-blue": "#072635",
+        "default-gray": "#707070",
         "background-color": "#F6F7F8",
+        button: "#01f0d0",
+      },
+      fontSize: {
+        headings: "24px",
       },
     },
   },

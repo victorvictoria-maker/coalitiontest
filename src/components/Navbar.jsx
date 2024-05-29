@@ -1,12 +1,12 @@
 import { Box, Flex, HStack, Avatar, Text, Link } from "@chakra-ui/react";
-import Logo from "../assets/TestLogo.svg";
-import HomeLogo from "../assets/HomeLogo.svg";
-import PatientLogo from "../assets/PatientLogo.svg";
-import CalenderLogo from "../assets/CalenderLogo.svg";
-import MessageLogo from "../assets/MessageLogo.svg";
-import CreditCardLogo from "../assets/CreditCardLogo.svg";
-import SettingsLogo from "../assets/SettingsLogo.svg";
-import MoreDetailsLogo from "../assets/MoreLogo.svg";
+import Logo from "../assets/Logo.svg";
+import HomeIcon from "../assets/HomeIcon.svg";
+import PatientIcon from "../assets/PatientIcon.svg";
+import CalenderIcon from "../assets/CalenderIcon.svg";
+import MessageIcon from "../assets/MessageIcon.svg";
+import CreditCardIcon from "../assets/CreditCardIcon.svg";
+import SettingsIcon from "../assets/SettingsIcon.svg";
+import MoreDetailsIcon from "../assets/MoreIcon.svg";
 import DrJose from "../assets/DrJose.png";
 
 const Navbar = () => {
@@ -33,20 +33,20 @@ const Navbar = () => {
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
-                <img src={HomeLogo} alt='Logo for the Overview page' />
+                <img src={HomeIcon} alt='Icon for the Overview page' />
                 <span className='text-sm font-bold ml-2'>Overview</span>
               </Flex>
             </Link>
           </li>
-          <li>
+          <li className='bg-button rounded-full px-4 py-2'>
             <Link
               href='/about'
               aria-label='About'
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
-                <img src={PatientLogo} alt='Logo for the Patient page' />
-                <span className='text-sm font-bold ml-2'>Patient</span>
+                <img src={PatientIcon} alt='Icon for the Patient page' />
+                <span className='text-sm font-bold ml-2 '>Patients</span>
               </Flex>
             </Link>
           </li>
@@ -57,7 +57,7 @@ const Navbar = () => {
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
-                <img src={CalenderLogo} alt='Logo for the Schedule page' />
+                <img src={CalenderIcon} alt='Icon for the Schedule page' />
                 <span className='text-sm font-bold ml-2'>Schedule</span>
               </Flex>
             </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
-                <img src={MessageLogo} alt='Logo for the Message page' />
+                <img src={MessageIcon} alt='Icon for the Message page' />
                 <span className='text-sm font-bold ml-2'>Message</span>
               </Flex>
             </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
-                <img src={CreditCardLogo} alt='Logo for the Transaction page' />
+                <img src={CreditCardIcon} alt='Icon for the Transaction page' />
                 <span className='text-sm font-bold ml-2'>Transactions</span>
               </Flex>
             </Link>
@@ -107,8 +107,8 @@ const Navbar = () => {
           {/* Divider */}
           <Box height='34px' width='1px' bg='gray.400' />
 
-          <img src={SettingsLogo} alt='Logo for the Settings page' />
-          <img src={MoreDetailsLogo} alt='Logo for the More Details page' />
+          <img src={SettingsIcon} alt='Icon for the Settings page' />
+          <img src={MoreDetailsIcon} alt='Icon for the More Details page' />
         </HStack>
       </Flex>
     </Box>

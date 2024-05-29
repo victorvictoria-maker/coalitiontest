@@ -1,11 +1,12 @@
 import "./App.css";
+import MainSection from "./components/MainSection.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
     <div className='m-4'>
-      {/* <h1 className='text-red bg-purple-400'>Hi</h1> */}
       <Navbar />
+      <MainSection />
     </div>
   );
 }
