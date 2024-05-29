@@ -10,7 +10,7 @@ const DiagnosticListCard = ({ problem, description, status }) => {
         <Box flex='2'>
           <Text className='text-sm'>{description}</Text>
         </Box>
-        <Box flex='1' textAlign='right'>
+        <Box flex='1'>
           <Text className='text-sm '>{status}</Text>
         </Box>
       </Flex>

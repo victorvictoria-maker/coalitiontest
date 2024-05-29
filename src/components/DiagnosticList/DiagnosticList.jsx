@@ -8,7 +8,7 @@ const DiagnosticList = ({ diagnosticList }) => {
         Diagnostic List
       </Heading>
 
-      <Box p={4} className='bg-background-color rounded-full '>
+      <Box m={4} px={2} py={4} className='bg-background-color rounded-full '>
         <Flex alignItems='center'>
           <Box flex='1'>
             <Text className='text-sm font-bold'>Problem/Diagnosis</Text>
@@ -16,13 +16,13 @@ const DiagnosticList = ({ diagnosticList }) => {
           <Box flex='2'>
             <Text className='text-sm font-bold'>Description</Text>
           </Box>
-          <Box flex='1' textAlign='right'>
+          <Box flex='1'>
             <Text className='text-sm font-bold'>Status</Text>
           </Box>
         </Flex>
       </Box>
 
-      <Box className='scrollable-container-diagnostic mt-2 '>
+      <Box className='scrollable-container-diagnostic '>
         <Grid
           className='bg-white pr-1'
           templateColumns='repeat(auto-fit, minmax(450px, 1fr))'

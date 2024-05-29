@@ -15,7 +15,7 @@ const LabResults = ({ labResults }) => {
         Lab Results
       </Heading>
 
-      <Box className='scrollable-container-labresult mt-2'>
+      <Box className='scrollable-container-labresult mt-4 ml-4'>
         <Grid
           className='bg-white pr-1'
           templateColumns='repeat(auto-fit, minmax(250px, 1fr))'

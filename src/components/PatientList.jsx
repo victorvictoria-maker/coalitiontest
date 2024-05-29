@@ -18,7 +18,7 @@ const PatientList = ({ patientsdata }) => {
   };
 
   return (
-    <Box as='aside' className='mt-8 rounded-xl text-default-blue bg-white'>
+    <Box as='aside' className='mt-12 rounded-xl text-default-blue bg-white'>
       <Flex justifyContent='space-between' alignItems='center'>
         <Heading as='h1' className='font-headings' p={4}>
           Patients

@@ -14,17 +14,24 @@ const UserProfile = ({ jenniferData }) => {
     insurance_type,
   } = jenniferData;
   return (
-    <Box as='aside' className='bg-white mt-4 rounded-xl p-6 mb-2'>
+    <Box as='aside' className='bg-white mt-8 rounded-xl p-6 mb-2'>
       {/* User Profile Details */}
       <Flex direction='column' alignItems='center' className='align-center'>
-        <Avatar size='xl' name='Patient' src={profile_picture} mb={4} />
-        <Text fontSize='lg' fontWeight='bold'>
+        <Avatar
+          mt={4}
+          name='Patient'
+          src={profile_picture}
+          mb={4}
+          width={200}
+          height={200}
+        />
+        <Text className='text-2xl' fontWeight='bold' mt={2}>
           {name}
         </Text>
       </Flex>
 
-      <Flex align='center' mt={4}>
-        <img src={BirthIcon} alt='Calender Icon' className='mr-3' />
+      <Flex align='center' mt={8}>
+        <img src={BirthIcon} alt='Calender Icon' className='mr-3 ' />
         <Box>
           <Text fontSize='sm'>Date of Birth</Text>
           <Text fontSize='sm' fontWeight='bold'>
@@ -33,7 +40,7 @@ const UserProfile = ({ jenniferData }) => {
         </Box>
       </Flex>
 
-      <Flex align='center' mt={4}>
+      <Flex align='center' mt={6}>
         <img src={GenderIcon} alt='' className='mr-3' />
         <Box>
           <Text fontSize='sm'>Gender</Text>
@@ -43,7 +50,7 @@ const UserProfile = ({ jenniferData }) => {
         </Box>
       </Flex>
 
-      <Flex align='center' mt={4}>
+      <Flex align='center' mt={6}>
         <img src={ContactIcon} alt='' className='mr-3' />
         <Box>
           <Text fontSize='sm'>Contact Info</Text>
@@ -52,7 +59,7 @@ const UserProfile = ({ jenniferData }) => {
           </Text>
         </Box>
       </Flex>
-      <Flex align='center' mt={4}>
+      <Flex align='center' mt={6}>
         <img src={ContactIcon} alt='' className='mr-3' />
         <Box>
           <Text fontSize='sm'>Emergency Contacts</Text>
@@ -62,7 +69,7 @@ const UserProfile = ({ jenniferData }) => {
         </Box>
       </Flex>
 
-      <Flex align='center' mt={4}>
+      <Flex align='center' mt={6}>
         <img src={InsuranceIcon} alt='' className='mr-3' />
         <Box>
           <Text fontSize='sm'>Insurance Provider</Text>
@@ -72,7 +79,7 @@ const UserProfile = ({ jenniferData }) => {
         </Box>
       </Flex>
 
-      <button className='rounded-full w-full bg-button p-3 mt-8 '>
+      <button className='rounded-full w-full bg-button p-3 mt-12 mb-4'>
         Show All Information
       </button>
     </Box>

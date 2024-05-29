@@ -6,7 +6,7 @@ const EachLabResultCard = ({ testname, isActive, onClick }) => {
     <Flex
       justify='space-between'
       align='center'
-      className='px-4 py-3'
+      className='px-4 py-5'
       bg={isActive ? "#f6f7f8" : ""}
       transition='border-color 0.3s ease'
       _hover={{ bg: "#f6f7f8" }}

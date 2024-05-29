@@ -12,7 +12,7 @@ body {
 /* PATIENT LIST */
 .scrollable-container {
   background-color: #e3e4e6;
-  max-height: 750px;
+  max-height: 950px;
   overflow-y: auto;
 }
 
@@ -23,13 +23,12 @@ body {
 .scrollable-container::-webkit-scrollbar-thumb {
   background-color: #072635;
   border-radius: 10px;
-  height: 5px !important;
 }
 
 /* INSIDE DIAGNOSITIC LIST */
 .scrollable-container-diagnostic {
   background-color: #e3e4e6;
-  max-height: 180px;
+  max-height: 160px;
   overflow-y: auto;
 }
 
@@ -40,7 +39,6 @@ body {
 .scrollable-container-diagnostic::-webkit-scrollbar-thumb {
   background-color: #072635;
   border-radius: 10px;
-  height: 5px;
 }
 
 /* INSIDE LAB RESULTS */
@@ -57,7 +55,6 @@ body {
 .scrollable-container-labresult::-webkit-scrollbar-thumb {
   background-color: #072635;
   border-radius: 10px;
-  height: 5px !important;
 }
 
 /* DIAGNOSIS CARDS */

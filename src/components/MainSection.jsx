@@ -68,7 +68,7 @@ const MainSection = () => {
 
       {/* CENTER  */}
       <GridItem colSpan={2}>
-        <Box p={4} className='mt-8 rounded-xl bg-white'>
+        <Box p={4} className='mt-8 rounded-xl '>
           <DiagnosisHistory diagnosisHistory={jenniferData.diagnosis_history} />
 
           <DiagnosticList diagnosticList={jenniferData.diagnostic_list} />
