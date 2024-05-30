@@ -7,6 +7,7 @@ import DiagnosisHistory from "./DiagnosisHistory/DiagnosisHistory";
 import DiagnosticList from "./DiagnosticList/DiagnosticList";
 import LabResults from "./LabResults/LabResults";
 import Loading from "./Loading";
+import { Helmet } from "react-helmet-async";
 
 const MainSection = () => {
   const [data, setData] = useState(null);
@@ -60,27 +61,39 @@ const MainSection = () => {
   }
 
   return (
-    <Grid as='main' templateColumns='repeat(4, 1fr)' gap={4}>
-      {/* LEFT SECTION*/}
-      <GridItem colSpan={1}>
-        <PatientList patientsdata={data} />
-      </GridItem>
+    <>
+      <Helmet>
+        <title>Patient {jenniferData.name} | Tech Care </title>
+        <meta
+          name='description'
+          content='This page shows a patients health details'
+        />
+      </Helmet>
 
-      {/* CENTER  */}
-      <GridItem colSpan={2}>
-        <Box p={4} className='mt-8 rounded-xl '>
-          <DiagnosisHistory diagnosisHistory={jenniferData.diagnosis_history} />
+      <Grid as='main' templateColumns='repeat(4, 1fr)' gap={4}>
+        {/* LEFT SECTION*/}
+        <GridItem colSpan={1}>
+          <PatientList patientsdata={data} />
+        </GridItem>
 
-          <DiagnosticList diagnosticList={jenniferData.diagnostic_list} />
-        </Box>
-      </GridItem>
+        {/* CENTER  */}
+        <GridItem colSpan={2}>
+          <Box p={4} className='mt-8 rounded-xl '>
+            <DiagnosisHistory
+              diagnosisHistory={jenniferData.diagnosis_history}
+            />
 
-      {/* RIGHT SECTION*/}
-      <GridItem colSpan={1}>
-        <UserProfile jenniferData={jenniferData} />
-        <LabResults labResults={jenniferData.lab_results} />
-      </GridItem>
-    </Grid>
+            <DiagnosticList diagnosticList={jenniferData.diagnostic_list} />
+          </Box>
+        </GridItem>
+
+        {/* RIGHT SECTION*/}
+        <GridItem colSpan={1}>
+          <UserProfile jenniferData={jenniferData} />
+          <LabResults labResults={jenniferData.lab_results} />
+        </GridItem>
+      </Grid>
+    </>
   );
 };
 

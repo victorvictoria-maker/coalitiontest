@@ -69,8 +69,6 @@ const Chart = ({ diagnosisHistory }) => {
     ],
   };
 
-  console.log(diagnosisHistory);
-
   const options = {
     reponsive: true,
     plugins: {
