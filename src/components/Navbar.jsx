@@ -28,7 +28,7 @@ const Navbar = () => {
         >
           <li>
             <Link
-              href='/home'
+              href='/'
               aria-label='Home'
               _hover={{ textDecoration: "none" }}
             >
@@ -40,8 +40,8 @@ const Navbar = () => {
           </li>
           <li className='bg-button rounded-full px-4 py-2'>
             <Link
-              href='/about'
-              aria-label='About'
+              href='/patients/Emily'
+              aria-label='Patients'
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
@@ -52,8 +52,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href='/services'
-              aria-label='Services'
+              href='/schedule'
+              aria-label='Schedule'
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>
@@ -64,8 +64,8 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href='/contact'
-              aria-label='Contact'
+              href='/message'
+              aria-label='Message'
               _hover={{ textDecoration: "none" }}
             >
               <Flex align='center'>

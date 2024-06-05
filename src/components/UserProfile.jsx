@@ -4,7 +4,7 @@ import GenderIcon from "../assets/GenderIcon.png";
 import ContactIcon from "../assets/PhoneIcon.png";
 import InsuranceIcon from "../assets/InsuranceIcon.png";
 
-const UserProfile = ({ jenniferData }) => {
+const UserProfile = ({ patientData }) => {
   const {
     name,
     profile_picture,
@@ -12,7 +12,7 @@ const UserProfile = ({ jenniferData }) => {
     gender,
     phone_number,
     insurance_type,
-  } = jenniferData;
+  } = patientData;
   return (
     <Box as='aside' className='bg-white mt-8 rounded-xl p-6 mb-2'>
       {/* User Profile Details */}

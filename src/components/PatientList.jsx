@@ -4,17 +4,18 @@ import EachPatientCard from "./EachPatientCard";
 import Loading from "./Loading";
 import { useState } from "react";
 
-const PatientList = ({ patientsdata }) => {
+const PatientList = ({ patientsdata, onCardClick }) => {
   if (!patientsdata) {
     return <Loading />;
   }
 
   const patients = patientsdata;
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [activeCard, setActiveCard] = useState(3);
+  const [activeCard, setActiveCard] = useState(0);
 
   const handleCardClick = (index) => {
     setActiveCard(index);
+    onCardClick(index);
   };
 
   return (

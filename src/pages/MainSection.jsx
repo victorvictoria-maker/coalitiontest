@@ -1,19 +1,20 @@
 import { Grid, GridItem, Box } from "@chakra-ui/react";
-import PatientList from "./PatientList";
+import PatientList from "./../components/PatientList";
 import { useEffect, useState } from "react";
 
-import UserProfile from "./UserProfile";
-import DiagnosisHistory from "./DiagnosisHistory/DiagnosisHistory";
-import DiagnosticList from "./DiagnosticList/DiagnosticList";
-import LabResults from "./LabResults/LabResults";
-import Loading from "./Loading";
+import UserProfile from "../components/UserProfile";
+import DiagnosisHistory from "../components/DiagnosisHistory/DiagnosisHistory";
+import DiagnosticList from "../components/DiagnosticList/DiagnosticList";
+import LabResults from "../components/LabResults/LabResults";
+import Loading from "../components/Loading";
 import { Helmet } from "react-helmet-async";
 
 const MainSection = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [jenniferData, setJenniferData] = useState(null);
+  const [presentPatientIndex, setPresentPatientIndex] = useState(0);
+  const [patientData, setPatientData] = useState(null);
 
   // ENCYPTING THE KEY
   const username = "coalition";
@@ -41,7 +42,7 @@ const MainSection = () => {
         const result = await response.json();
 
         setData(result);
-        setJenniferData(result[3]);
+        setPatientData(result[presentPatientIndex]);
         setIsLoading(false);
       } catch (error) {
         setError(error.message);
@@ -50,11 +51,14 @@ const MainSection = () => {
     };
 
     fetchData();
-  }, []);
+  }, [encodedCredentials, presentPatientIndex]);
 
-  // if (jenniferData) {
-  //   console.log(jenniferData);
-  // }
+  const handleCardClick = (index) => {
+    setPresentPatientIndex(index);
+    console.log("Inside handlecard click inside use effect  " + index);
+  };
+
+  console.log("end of main section " + presentPatientIndex);
 
   if (!data) {
     return <Loading />;
@@ -63,7 +67,7 @@ const MainSection = () => {
   return (
     <>
       <Helmet>
-        <title>Patient {jenniferData.name} | Tech Care </title>
+        <title>Patient {patientData.name} | Tech Care </title>
         <meta
           name='description'
           content='This page shows a patients health details'
@@ -73,24 +77,24 @@ const MainSection = () => {
       <Grid as='main' templateColumns='repeat(4, 1fr)' gap={4}>
         {/* LEFT SECTION*/}
         <GridItem colSpan={1}>
-          <PatientList patientsdata={data} />
+          <PatientList patientsdata={data} onCardClick={handleCardClick} />
         </GridItem>
 
         {/* CENTER  */}
         <GridItem colSpan={2}>
           <Box p={4} className='mt-8 rounded-xl '>
             <DiagnosisHistory
-              diagnosisHistory={jenniferData.diagnosis_history}
+              diagnosisHistory={patientData.diagnosis_history}
             />
 
-            <DiagnosticList diagnosticList={jenniferData.diagnostic_list} />
+            <DiagnosticList diagnosticList={patientData.diagnostic_list} />
           </Box>
         </GridItem>
 
         {/* RIGHT SECTION*/}
         <GridItem colSpan={1}>
-          <UserProfile jenniferData={jenniferData} />
-          <LabResults labResults={jenniferData.lab_results} />
+          <UserProfile patientData={patientData} />
+          <LabResults labResults={patientData.lab_results} />
         </GridItem>
       </Grid>
     </>
