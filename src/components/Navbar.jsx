@@ -38,7 +38,7 @@ const Navbar = () => {
               </Flex>
             </Link>
           </li>
-          <li className='bg-button rounded-full px-4 py-2'>
+          <li className=' rounded-full px-4 py-2'>
             <Link
               href='/patients/Emily'
               aria-label='Patients'
